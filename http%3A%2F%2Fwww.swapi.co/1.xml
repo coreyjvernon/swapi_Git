@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="1" path="/api/people/{person}/" id="ab773b62-6a80-4d37-ba7d-0bea16e54d65" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ab773b62-6a80-4d37-ba7d-0bea16e54d65fileName">1</con:setting>
+  </con:settings>
+  <con:parameters>
+    <con:parameter>
+      <con:name>person</con:name>
+      <con:value>1</con:value>
+      <con:style>TEMPLATE</con:style>
+      <con:default>1</con:default>
+    </con:parameter>
+  </con:parameters>
+  <con:method name="1" id="f2b865dc-798d-49d8-8dcc-cf48e64b5421" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:element xmlns:ns="https://www.swapi.co/api/people/1/">ns:Response</con:element>
+    </con:representation>
+    <con:request name="Request 1" id="7fcd4f57-c3ae-44e7-8afe-b2c4a7607052" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://www.swapi.co</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://www.swapi.co/api/people/1/</con:originalUri>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>person</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

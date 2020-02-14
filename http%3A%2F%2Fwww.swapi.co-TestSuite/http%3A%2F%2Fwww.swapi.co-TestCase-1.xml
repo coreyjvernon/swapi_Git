@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="89b31919-310d-41be-8887-946ff286f8f5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="http://www.swapi.co TestCase 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="89b31919-310d-41be-8887-946ff286f8f5fileName">http%3A%2F%2Fwww.swapi.co-TestCase-1</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="2a0adf81-e5a2-45a9-b74a-00055dfd1535">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>10</generatedDataCount>
+          <generatorsTotalNumber>1</generatorsTotalNumber>
+          <lastSelectedProperty>-1</lastSelectedProperty>
+          <GeneratorType0>INT</GeneratorType0>
+          <PropertyName0>person</PropertyName0>
+          <repetitionCountperson>0</repetitionCountperson>
+          <repeatValuesperson>false</repeatValuesperson>
+          <IntegerDataGeneratorMinValueperson>1</IntegerDataGeneratorMinValueperson>
+          <IntegerDataGeneratorMaxValueperson>82</IntegerDataGeneratorMaxValueperson>
+          <IntegerDataGeneratorStepValueperson>1</IntegerDataGeneratorStepValueperson>
+          <IntegerDataGeneratorConsequentValuesperson>false</IntegerDataGeneratorConsequentValuesperson>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>person</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Request 1" id="38d1a3ec-81d6-4d6a-b9f1-a28b7f0864cd">
+    <con:settings/>
+    <con:config service="http://www.swapi.co" resourcePath="/api/people/{person}/" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="7fcd4f57-c3ae-44e7-8afe-b2c4a7607052" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://www.swapi.co</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://www.swapi.co/api/people/1/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="441969ce-c7fe-43a9-80ef-a86b0092d242" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="person" value="${DataSource#person}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>person</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="62135d61-67f1-4668-933d-983a02c504b0">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Request 1</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

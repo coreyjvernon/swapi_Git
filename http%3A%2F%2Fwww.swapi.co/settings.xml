@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="208054f4-c9e0-4700-bb7c-dc236f5825a2" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://www.swapi.co" type="rest" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:settings>
+    <con:setting id="208054f4-c9e0-4700-bb7c-dc236f5825a2fileName">http%3A%2F%2Fwww.swapi.co</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart=""/>
+  <con:endpoints>
+    <con:endpoint>http://www.swapi.co</con:endpoint>
+  </con:endpoints>
+</con:interface>
